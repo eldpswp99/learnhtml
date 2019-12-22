@@ -71,9 +71,72 @@
 			<label>선호색상<input type = "color" value="#000000"></label><br>
 			<input type ="datetime-local" value = "2019-01-01T18:00" step="" autofocus><br>
 			<input type ="image" id="butt" src="images/login.jpg"><br>
-			<input type="button" value="button" onclick="window.open()">
+			<input type="button" value="button" onclick="window.open()"><br>
+			<input type="text" value="readonly" readonly><br>
+			<label for="group">단체주문</label>
+			<input type="number" id="group" value="10" min="10" max="100" step="10"><br>
+			<label>아이디<input type="text" id="user_id" size="10" minlength="4" maxlength="15"></label><small style="color:red">4~15자리 영문과 숫자</small><br>
+			<label class="reg" for="class">학과</label>
+			<select id="class">
+				<optgroup label ="공과대학">
+					<option value="archi">건축공학과</option>
+					<option value="mechanic">기계공학과</option>
+					<option value="indust">산업공학과</option>
+					<option value="elec">전기전자공학과</option>
+					<option value="computer">컴퓨터공학과</option>
+					<option value="chemical">화학공학과</option>
+				</optgroup>
+				<optgroup label ="인문대학">
+					<option value="history">사학과</option>
+					<option value="lang">언어학과</option>
+					<option value="philo">철학과</option>
+				</optgroup>
+			</select><br>
+			<input type="text" list="datalist_id">
+				<datalist id="datalist_id">
+				<option value="grammar" label="문법"></option>
+				<option value="voca" label="어휘"></option>
+				<option value="speaking" label="회화"></option>
+				<option value="listening" label="리스닝"></option>
+				<option value="news" label="뉴스청취"></option>
+				</datalist><br>
+			<textarea cols = "60" rows = "5">열심히 사는 사람들의 손을 잡아주는 곳 - 이지스 퍼블리싱
+
+우리는 책을 내기 전에 다시 한번 물어봅니다
+"이 책이 사람들에게 도움이 되는가?"
+
+더 쉽게, 더 빠르게 지식을 전달하고 싶습니다.
+이지스퍼블리싱의 책과 앱을 만나보세요.</textarea><br>
+			<button type="submit">전송하기</button>
+			<button type="submit" class="subm">
+				<img src = "images/tick.png" alt=""> 전송하기
+			</button>
 		</form>
 		
+		<form oninput="result.value=parseInt(num1.value)+parseInt(num2.value)">
+			<input type="number" name="num1" value="0">
+			+<input type="number" name="num2" value="0">
+			=<output name="result" for="num"></output>
+		</form>
+		<progress value="43" max="100"></progress>
+		<ul>
+			<li>
+				<label>점유율 0.8</label>
+				<meter value="0.8"></meter>
+			</li>
+			<li>
+				<label>사용량 64%</label>
+				<meter min="0" max="100" value="64"></meter>
+			</li>
+			<li>
+				<label>트래픽 초과</label>
+				<meter min="1024" max="10240" low="2048" high="8192" value="9216"></meter>
+			</li>
+			<li>
+				<label>적절</label>
+				<meter value="0.5" optimum="0.8"></meter>
+			</li>
+		</ul>
 		
 	</body>
 	
