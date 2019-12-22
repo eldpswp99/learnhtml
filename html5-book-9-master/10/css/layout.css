@@ -52,6 +52,18 @@ article{
 	padding:5px;
 	overflow:hidden;
 }
+article section{
+	width:30%;
+	height:650px;
+	float:left;
+	margin:5px;
+	padding:5px;
+	border:1px dotted #333;
+}
+section h3{
+	background:url("../images/bg-note.png") no-repeat left center;
+	padding-left:30px;
+}
 aside{
 	clear:both;
 	margin:0 auto;

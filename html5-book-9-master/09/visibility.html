@@ -8,15 +8,25 @@
 				margin:10px;
 				padding:5px;
 				border:1px solid black;
+				position:relative;
 			}
-			.invisible {
-				visibility:hidden;
+			.img1{
+				z-index:100;
 			}
+			.img2{
+				top:100px;
+				right:150px;
+			}
+			.img3{
+				bottom:100px;
+				left:80px;
+			}
+			
 		</style>
 	</head>
 	<body>
-			<img src="images/pic1.jpg">
-			<img src="images/pic2.jpg" class="invisible">
-			<img src="images/pic3.jpg">
+			<img class="img1" src="images/pic1.jpg">
+			<img class="img2" src="images/pic2.jpg">
+			<img class="img3" src="images/pic3.jpg">
 	</body>
 </html>
