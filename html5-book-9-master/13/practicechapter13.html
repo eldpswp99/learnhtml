@@ -4,22 +4,31 @@
   <meta charset="utf-8">
   <title>practicechapter13</title>
   <style>
-	  .box{
+	  div{
 		  width:100px;
 		  height:100px;
-		  background:green;
-		  margin:50px;
-		  transition:3s;
+  		  margin:100px;
+		  animation:rotate 1.5s infinite, background 1.5s infinite alternate
 	  }
-	  .box:hover{
-		  background:yellow;
+	  
+	  @keyframes rotate{
+		  from{transform:perspective(120px) rotateX(0deg) rotateY(0deg);}
+		  50%{transform:perspective(120px) rotateX(-180deg) rotateY(0deg);}
+		  to{transform:perspective(120px) rotateX(0deg) rotateY(-180deg);}
+	  }
+	  
+	  @keyframes background{
+		  from{background:red;}
+		  50%{background:green;}
+		  to{background:blue};
 	  }
   </style>
 </head>
 <body>
-	<div class="box">
+	<div class="ani-shape">
 		
 	</div>
+	
 	
 </body>
 </html>
