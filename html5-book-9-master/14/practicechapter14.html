@@ -4,28 +4,40 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>practiceChapter14</title>
-	<style>	
-		body{
-			background:#eee;
+	<style>
+		#container{
+			display:flex;
+			height:300px;
+			border:2px solid black;
+			width:500px;
 		}
-		
-		@media screen and (orientation:landscape){
-			body{
-				background:orange;
-			}
+		#container div{
+			width:200px;
+			border:1px solid black;
+			background:#ccc;
 		}
-		
-		@media screen and (orientation:portrait){
-			body{
-				background:yellow;
-			}
-		}
-		
-		
+		#box1{order:2;}
+		#box2{order:3;}
+		#box3{order:1;}
 	</style>
 </head>
 <body>
-	
-	
+	<div id="container">
+		<div id="box1">
+			<h2>
+				1
+			</h2>
+		</div>
+		<div id="box2">
+			<h2>
+				2
+			</h2>
+		</div>
+		<div id="box3">
+			<h2>
+				3
+			</h2>
+		</div>
+	</div>	
 </body>
 </html>
