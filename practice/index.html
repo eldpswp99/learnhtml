@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Todo</title>
+		<link rel = "stylesheet" href = "index.css">
+		<meta charset = "utf-8">
+	</head>
+	<body onload = "runClock()">
+		<script type="text/javascript" src = "index.js"></script>
+		<div class = "clock">
+		
+		</div>
+		<form action = "index.js" name = "getInput" autocomplete = "off" target = "iframe1" onkeypress = "isSubmit()" onsubmit = "controllInput()">
+			<div class = "getName">
+				<input type = "text" name = "name" placeholder = "Write your Name here"> 	
+			</div>
+			<div class = "getTodo">
+				<input type = "text" name = "todo" placeholder = "Write a To Do Here"> 	
+			</div>
+		</form>
+		<div class = "todoList">
+			
+		</div>
+	</body>
+	<iframe name = "iframe1" style= "display : none">
+		
+	</iframe>
+</html>
