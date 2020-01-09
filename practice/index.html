@@ -4,23 +4,25 @@
 		<title>Todo</title>
 		<link rel = "stylesheet" href = "index.css">
 		<meta charset = "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<div class = "clock">
-		
-		</div>
-		<form action = "#" name = "getInput" autocomplete = "off" target = "iframe1" onkeypress = "isSubmit()">
-			<div class = "getName">
-				<input type = "text" name = "name" placeholder = "Write your Name here"> 	
+		<div class = "wrapper">
+			<div class = "clock">
+
 			</div>
-			<div class = "getTodo">
-				<input type = "text" name = "todo" placeholder = "Write a To Do Here"> 	
-			</div>
-		</form>
-		<div class = "todoList">
+			<form action = "#" name = "getInput" autocomplete = "off" target = "iframe1" onkeypress = "isSubmit()">
+				<input type = "text" name = "name" placeholder = "Write your Name here"> 
+				<br>
+					<input type = "text" name = "todo" placeholder = "Write a To Do Here"> 	
+			</form>
+			<ul class="todoList">
+
+			</ul>
 			
 		</div>
 		<script type="text/javascript" src = "index.js"></script>
+		
 	</body>
 	<iframe name = "iframe1" style= "display : none">
 		

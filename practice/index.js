@@ -33,8 +33,8 @@ function controlName(){
 	if(getName == null || getName.value === "") return;
 	
 	const helloName = document.createElement("span");
-	helloName.class = "helloName";		
-	const helloNameContent = document.createTextNode("Hello "+getName.value);
+	helloName.className = "helloName";		
+	const helloNameContent = document.createTextNode("Hello "+getName.value+"!");
 	helloName.appendChild(helloNameContent);
 	
 	const parent = getName.parentNode;
@@ -47,24 +47,23 @@ function controlTodo(){
 	if(getTodo == null || getTodo.value === "") return;
 	
 	const todoList = document.getElementsByClassName("todoList")[0];
-	const newDiv = document.createElement("div");
-	newDiv.class = "todoElem";
-	todoList.appendChild(newDiv);
+	const newli = document.createElement("li");
+	newli.className = "todoElem";
+	todoList.appendChild(newli);
 	
 	const doneImg = document.createElement("img");
 	doneImg.src = "images/x-removebg.png";
-	doneImg.class = "hasDone";
+	doneImg.className = "hasDone";
 	doneImg.addEventListener("click",imgOnClick,false);
 	doneImg.status = "notChecked";
-	
-	newDiv.appendChild(doneImg);
+	newli.appendChild(doneImg);
 	
 	const todoElem = document.createElement('p');
 	todoElem.class = "todoElem";
 	const todoText = document.createTextNode(getTodo.value);
 	
 	todoElem.appendChild(todoText);
-	newDiv.appendChild(todoElem);
+	newli.appendChild(todoElem);
 	
 	getTodo.value = "";
 }
