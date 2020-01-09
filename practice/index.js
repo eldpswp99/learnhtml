@@ -9,8 +9,9 @@ function runClock(){
 	m = addPreZero(m);
 	s = addPreZero(s);
 	
-	document.getElementsByClassName("clock")[0].innerHTML = 
-		h + ":" + m + ":" + s;
+	const clock = document.getElementsByClassName("clock")[0];
+	
+	clock.innerHTML = h + ":" + m + ":" + s;
 	
 	var t = setTimeout(function(){runClock()},1000);
 }
@@ -22,13 +23,74 @@ function addPreZero(arg){
 
 function isSubmit(){
 	if(event.keyCode === 13){
-		document.getElementsByName("getInput")[0].submit();
+		controlName();
+		controlTodo();
 	}
 }
 
-function controllInput(){
-	var name = document.getElementsByName("name")[0].value;
-	var todo = document.getElementsByName("todo")[0].value;
+function controlName(){
+	const getName = document.getElementsByName("name")[0];
+	if(getName == null || getName.value === "") return;
 	
-	console.log(name,todo);
+	const helloName = document.createElement("span");
+	helloName.class = "helloName";		
+	const helloNameContent = document.createTextNode("Hello "+getName.value);
+	helloName.appendChild(helloNameContent);
+	
+	const parent = getName.parentNode;
+	
+	parent.replaceChild(helloName,getName);
 }
+
+function controlTodo(){
+	const getTodo = document.getElementsByName("todo")[0];
+	if(getTodo == null || getTodo.value === "") return;
+	
+	const todoList = document.getElementsByClassName("todoList")[0];
+	const newDiv = document.createElement("div");
+	newDiv.class = "todoElem";
+	todoList.appendChild(newDiv);
+	
+	const doneImg = document.createElement("img");
+	doneImg.src = "images/x-removebg.png";
+	doneImg.class = "hasDone";
+	doneImg.addEventListener("click",imgOnClick,false);
+	doneImg.status = "notChecked";
+	
+	newDiv.appendChild(doneImg);
+	
+	const todoElem = document.createElement('p');
+	todoElem.class = "todoElem";
+	const todoText = document.createTextNode(getTodo.value);
+	
+	todoElem.appendChild(todoText);
+	newDiv.appendChild(todoElem);
+	
+	getTodo.value = "";
+}
+
+function imgOnClick(){
+	
+	if(event.target.status === "notChecked"){
+		event.target.src = "images/check-removebg.png";
+		event.target.status = "checked";
+	}else if(event.target.status === "checked"){
+		const imgGrandParent = event.target.parentNode.parentNode;
+		imgGrandParent.removeChild(event.target.parentNode);
+	}
+}
+
+function addLoadEvent(func){
+	const oldonload = window.onload;
+	if(typeof window.onload !== "function"){
+		window.onload = func;
+	}else{
+		window.onload() = function(){
+			oldonload();
+			func();
+		}
+	}
+}
+
+
+addLoadEvent(runClock());

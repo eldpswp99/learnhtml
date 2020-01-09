@@ -5,12 +5,11 @@
 		<link rel = "stylesheet" href = "index.css">
 		<meta charset = "utf-8">
 	</head>
-	<body onload = "runClock()">
-		<script type="text/javascript" src = "index.js"></script>
+	<body>
 		<div class = "clock">
 		
 		</div>
-		<form action = "index.js" name = "getInput" autocomplete = "off" target = "iframe1" onkeypress = "isSubmit()" onsubmit = "controllInput()">
+		<form action = "#" name = "getInput" autocomplete = "off" target = "iframe1" onkeypress = "isSubmit()">
 			<div class = "getName">
 				<input type = "text" name = "name" placeholder = "Write your Name here"> 	
 			</div>
@@ -21,6 +20,7 @@
 		<div class = "todoList">
 			
 		</div>
+		<script type="text/javascript" src = "index.js"></script>
 	</body>
 	<iframe name = "iframe1" style= "display : none">
 		
